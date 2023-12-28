@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SeleniumSuite">
+    <listeners>
+        <listener class-name="util.Report" />
+    </listeners>
+
+    <test name="SeleniumTest">
+        <classes>
+            <class name="Test.SeleniumTest" />
+        </classes>
+    </test>
+</suite>
