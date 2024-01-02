@@ -9,6 +9,9 @@ public class JavaScriptAlert {
 
     @FindBy(xpath = "//button[@class='btn btn-success']")
     WebElement clickme;
+    
     public void clickmeBtnclick() {
         clickme.click();
+        
+        
 }}

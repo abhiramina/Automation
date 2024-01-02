@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Excel {
+public class ExcelReadUtil {
     public String readExcel(int row, int col) throws IOException {
         String stringValue = null;
 

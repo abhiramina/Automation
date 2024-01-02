@@ -31,9 +31,18 @@ package pages;
 	public void datePickersClick() {
 		datePickers.click();}
 	public void alertsAndModalsClick() {
-		alertsAndModal.click();
+		alertsAndModal.click();}
+	public void progressBarsClick() {
+		progressBars.click();
+	
 	}
+	public void othersClick() {
+		others.click();
+	
 	}
+	public void tableClick() {
+		table.click();
+	}}
 
 
 

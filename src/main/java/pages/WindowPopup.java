@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import util.WaitUtil;
 import util.WindowHandler;
 
 public class WindowPopup {
@@ -13,7 +14,8 @@ public class WindowPopup {
     WebElement likeusonfacebook;
 
     // Assuming there is a title element to get text from
-    @FindBy(xpath = "//h1[@class='title']")
+    @FindBy(xpath = "//h1[@id='login_popup_cta_form']")
+	public
     WebElement title;
 
     // Assuming there is a follow button element
@@ -31,6 +33,8 @@ public class WindowPopup {
     }
 
     public String getTitles() {
+    	WaitUtil waitUtil= new WaitUtil(driver);
+    	waitUtil.explicitWait(25,title);
         return title.getText();
     }
 
