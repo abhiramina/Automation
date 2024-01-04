@@ -9,22 +9,18 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import base.DriveIntiation;
-import pages.AlertsAndModals;
+import pages.AlertsAndModalsPage;
 import pages.HomePage;
-import pages.WindowPopup;
+import pages.WindowPopupPage;
 import util.Screenshot;
 
 
-	    public class FacebookLink extends DriveIntiation {
+	    public class WindowPopupTest extends DriveIntiation {
 	    	WebDriver driver;
 	    	HomePage homePage;
 	    	DriveIntiation driveintiation;
-	    	AlertsAndModals alertsandmodals;
-	        WindowPopup windowpopup;
-	        
-	        
-
-
+	    	AlertsAndModalsPage alertsandmodals;
+	        WindowPopupPage windowpopup;
 	    	@BeforeTest
 	    	//Parameters({"browser"})
 	    	public void setUp(@Optional("chrome")String browser)throws Exception{
@@ -35,13 +31,12 @@ import util.Screenshot;
 	    	driver.get(INTIAL_URL);
 	    	homePage=PageFactory.initElements(driver,HomePage.class);
 	    	homePage.alertsAndModalsClick();
-	    	alertsandmodals=PageFactory.initElements(driver,AlertsAndModals.class);
+	    	alertsandmodals=PageFactory.initElements(driver,AlertsAndModalsPage.class);
 	    	alertsandmodals.popupclick();
-	    	windowpopup=PageFactory.initElements(driver,WindowPopup.class);
+	    	windowpopup=PageFactory.initElements(driver,WindowPopupPage.class);
 	    	windowpopup.facebookBtnClick();
-//    	windowpopup.getTitles();
-	    	// WebDriverWait wait = new WebDriverWait(driver, 25);
-	        // wait.until(ExpectedConditions.visibilityOf(windowpopup.title));
+    	    windowpopup.getTitles();
+	    	
 	    	Assert.assertEquals(windowpopup.getTitles(),"Connect with Obsqura Zone on Facebook");
 	    	Screenshot.takeScreenshot("WindowPopup.png",driver);
 	    }

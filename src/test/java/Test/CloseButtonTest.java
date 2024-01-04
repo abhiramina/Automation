@@ -12,14 +12,14 @@ import org.testng.annotations.Test;
 
 import base.DriveIntiation;
 import pages.HomePage;
-import pages.ProgressBars;
+import pages.ProgressBarsPage;
 import util.Screenshot;
 
 public class CloseButtonTest extends DriveIntiation  {
 	    	WebDriver driver;
 	    	HomePage homePage;
 	    	DriveIntiation driveintiation;
-	    	ProgressBars progressBars;
+	    	ProgressBarsPage progressBars;
 	       
 	    	@BeforeTest
 	    	//Parameters({"browser"})
@@ -31,7 +31,7 @@ public class CloseButtonTest extends DriveIntiation  {
 	    	driver.get(INTIAL_URL);
 	    	homePage=PageFactory.initElements(driver,HomePage.class);
 	    	homePage.progressBarsClick();
-	    	progressBars=PageFactory.initElements(driver,ProgressBars.class);
+	    	progressBars=PageFactory.initElements(driver,ProgressBarsPage.class);
 	    	progressBars.startDownloadBtnClick();
 	    	WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(60));
 //	        wait.until(ExpectedConditions.elementToBeClickable(progressBars.CloseBtnClick()));

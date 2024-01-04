@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class Others {
+public class OthersPage {
 	WebDriver driver;
 	@FindBy(xpath = "//span[text()='Draggable n°1']")
 	WebElement draggable1;
@@ -19,7 +19,7 @@ public class Others {
 	@FindBy(xpath = "//div[@id='mylist']")
 	WebElement dropList;
 
-	public Others(WebDriver driver) {
+	public OthersPage(WebDriver driver) {
 		this.driver = driver;
 	}
 

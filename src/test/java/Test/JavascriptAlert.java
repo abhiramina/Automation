@@ -17,10 +17,10 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import base.DriveIntiation;
-import pages.AlertsAndModals;
+import pages.AlertsAndModalsPage;
 import pages.HomePage;
-import pages.JavaScriptAlert;
-import pages.ProgressBars;
+import pages.JavaScriptAlertPage;
+import pages.ProgressBarsPage;
 import util.RetryAnalyzer;
 import util.Screenshot;
 
@@ -28,8 +28,8 @@ import util.Screenshot;
     	WebDriver driver;
     	HomePage homePage;
     	DriveIntiation driveintiation;
-    	AlertsAndModals alertsandmodals;
-    	JavaScriptAlert javascriptalert;
+    	AlertsAndModalsPage alertsandmodals;
+    	JavaScriptAlertPage javascriptalert;
     	@BeforeTest
     	//Parameters({"browser"})
     	public void setUp(@Optional("chrome")String browser)throws Exception{
@@ -41,9 +41,9 @@ import util.Screenshot;
     	homePage=PageFactory.initElements(driver,HomePage.class);
     	
     	homePage.alertsAndModalsClick();
-    	alertsandmodals=PageFactory.initElements(driver,AlertsAndModals.class);
+    	alertsandmodals=PageFactory.initElements(driver,AlertsAndModalsPage.class);
     	alertsandmodals.jsAlert();
-    	javascriptalert=PageFactory.initElements(driver,JavaScriptAlert.class);
+    	javascriptalert=PageFactory.initElements(driver,JavaScriptAlertPage.class);
     	javascriptalert.clickmeBtnclick();
     	Alert alert = driver.switchTo().alert();
     	String alertText = alert.getText();

@@ -10,16 +10,16 @@ import org.testng.annotations.Test;
 
 import base.DriveIntiation;
 import pages.HomePage;
-import pages.InputForm;
-import pages.RadiobuttonDemo;
+import pages.InputFormPage;
+import pages.RadiobuttonDemoPage;
 import util.Screenshot;
 
 public class RadioButtonTest extends DriveIntiation {
 	WebDriver driver;
 	HomePage homePage;
 	DriveIntiation driveintiation;
-	InputForm inputform;
-	RadiobuttonDemo radiobuttondemo;
+	InputFormPage inputform;
+	RadiobuttonDemoPage radiobuttondemo;
 
 	@BeforeTest
 	// Parameters({"browser"})
@@ -32,9 +32,9 @@ public class RadioButtonTest extends DriveIntiation {
 		driver.get(INTIAL_URL);
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		homePage.inputFormclick();
-		inputform = PageFactory.initElements(driver, InputForm.class);
+		inputform = PageFactory.initElements(driver, InputFormPage.class);
 		inputform.radiobutton();
-		radiobuttondemo = PageFactory.initElements(driver, RadiobuttonDemo.class);
+		radiobuttondemo = PageFactory.initElements(driver, RadiobuttonDemoPage.class);
 		radiobuttondemo.malebtnclick();
 		radiobuttondemo.showselectedbtnclick();
 //		    	windowpopup.getTitles();

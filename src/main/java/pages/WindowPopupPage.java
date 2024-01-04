@@ -7,29 +7,29 @@ import org.openqa.selenium.support.FindBy;
 import util.WaitUtil;
 import util.WindowHandler;
 
-public class WindowPopup {
+public class WindowPopupPage {
     WebDriver driver;
 
     @FindBy(xpath = "//a[contains(text(),'Like us On Facebook')]")
     WebElement likeusonfacebook;
 
     // Assuming there is a title element to get text from
-    @FindBy(xpath = "//h1[@id='login_popup_cta_form']")
+    @FindBy(xpath = "//form[@id='login_popup_cta_form']/div/div[@class='x1xka2u1 xqfms19']/child::span")
 	public
     WebElement title;
-
+    
     // Assuming there is a follow button element
     @FindBy(xpath = "//button[@class='follow-button']")
     WebElement followAllButton;
 
-    public WindowPopup(WebDriver driver) {
+    public WindowPopupPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void facebookBtnClick() {
         likeusonfacebook.click();
         // Assuming there is a WindowHandler class with a windowHandler method
-        WindowHandler.windowHandle(driver);
+        WindowHandler.handleWindows(driver);
     }
 
     public String getTitles() {

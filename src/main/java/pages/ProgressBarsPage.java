@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import util.WindowHandler;
 
-public class ProgressBars {
+public class ProgressBarsPage {
     WebDriver driver;
 
     @FindBy(xpath = "//button[@id='downloadButton']")
@@ -15,7 +15,7 @@ public class ProgressBars {
     @FindBy(xpath = "//button[@type='button' and @class='ui-button ui-corner-all ui-widget']")
     WebElement closebutton; // Added missing WebElement for downloadBtn
 
-    public ProgressBars(WebDriver driver) {
+    public ProgressBarsPage(WebDriver driver) {
         this.driver = driver;
     }
 

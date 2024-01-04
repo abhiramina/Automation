@@ -42,6 +42,9 @@ package pages;
 	}
 	public void tableClick() {
 		table.click();
+		
+		
+		
 	}}
 
 

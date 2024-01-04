@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class InputForm {
+public class InputFormPage {
 	WebDriver driver;
 	By selectInputSideMenu = By.xpath("//a[contains(text(),'Select Input')]");
 	@FindBy(xpath="//a[contains(text(),'Radio Buttons Demo')]")
@@ -16,7 +16,7 @@ public class InputForm {
 	@FindBy(xpath="//a[contains(text(),'Form Submit')]")
 	WebElement formsubmit;
 	
-	public InputForm(WebDriver driver) {
+	public InputFormPage(WebDriver driver) {
 		this.driver = driver;
 	}
 	public void clickOnSideMenu() {driver.findElement(selectInputSideMenu).click();}

@@ -11,15 +11,15 @@ import com.aventstack.extentreports.ExtentReports;
 
 import base.DriveIntiation;
 import pages.HomePage;
-import pages.Others;
+import pages.OthersPage;
 import util.Screenshot;
 
 //@Listeners(util.Report.class)
 
-   public class DragAndDrop extends DriveIntiation {
+   public class DragAndDropTest extends DriveIntiation {
 	WebDriver driver;
 	HomePage homepage;
-	Others others;
+	OthersPage others;
 	ExtentReports extentreport;
 	private ExtentReports extenttest;
 
@@ -37,7 +37,7 @@ import util.Screenshot;
 		homepage = PageFactory.initElements(driver, HomePage.class);
 
 		homepage.othersClick();
-		others = PageFactory.initElements(driver,Others.class);
+		others = PageFactory.initElements(driver,OthersPage.class);
 		others.dragAndDrop3();
 		Screenshot.takeScreenshot("draganddrop.png", driver);
 	}

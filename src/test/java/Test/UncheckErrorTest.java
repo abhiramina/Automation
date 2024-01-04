@@ -12,17 +12,17 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 import base.DriveIntiation;
-import pages.FormSubmit;
+import pages.FormSubmitPage;
 import pages.HomePage;
-import pages.InputForm;
+import pages.InputFormPage;
 import util.Screenshot;
 
-public class UncheckError extends DriveIntiation {
+public class UncheckErrorTest extends DriveIntiation {
 	WebDriver driver;
 	HomePage homePage;
 	DriveIntiation driveintiation;
-	InputForm inputform;
-	FormSubmit formsubmit;
+	InputFormPage inputform;
+	FormSubmitPage formsubmit;
 
 	@BeforeTest
 	// Parameters({"browser"})
@@ -36,9 +36,9 @@ public class UncheckError extends DriveIntiation {
 		homePage = PageFactory.initElements(driver, HomePage.class);
 
 		homePage.inputFormclick();
-		inputform = PageFactory.initElements(driver, InputForm.class);
+		inputform = PageFactory.initElements(driver, InputFormPage.class);
 		inputform.formsubmit();
-		formsubmit = PageFactory.initElements(driver, FormSubmit.class);
+		formsubmit = PageFactory.initElements(driver, FormSubmitPage.class);
 		formsubmit.Firstname("abhirami");
 		formsubmit.lastname("nair");
 		formsubmit.username("abhiraminair");
@@ -60,7 +60,7 @@ public class UncheckError extends DriveIntiation {
 
 	@AfterTest
 	public void closeTest() {
-		//driver.quit();
+		driver.quit();
 	}}
 
  

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class FormSubmit {
+public class FormSubmitPage {
 	WebDriver driver;
 
 	@FindBy(xpath = "//input[@id='validationCustom01']")
@@ -29,7 +29,7 @@ public class FormSubmit {
 	WebElement showtext2;
 	
 
-	public FormSubmit(WebDriver driver) {
+	public FormSubmitPage(WebDriver driver) {
 		this.driver = driver;
 	}
 

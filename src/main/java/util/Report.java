@@ -6,60 +6,48 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class Report implements ITestListener {
-	static ExtentReports extentreports;
-	static ExtentTest extenttest;
-	static {
-		String reportPath = System.getProperty("user.dir")+("C:\\Users\\testresults.html");
-				ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath);
-		htmlReporter.config().setDocumentTitle("Automation reports");
-		htmlReporter.config().setReportName("Automation results");
-		htmlReporter.config().setTheme(Theme.STANDARD);
-		extentreports=new ExtentReports();
-		extentreports.attachReporter(htmlReporter);
-		
-		
-	}
-	
-	
-
+	private static final ExtentReports extentReports;
+    ExtentTest extentTest ;
+    static {
+        String reportPath = System.getProperty("user.dir") + "/test-output/ExtentReport.html";
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath);
+        htmlReporter.config().setDocumentTitle("Automation Report");
+        htmlReporter.config().setReportName("Test Automation Results");
+        htmlReporter.config().setTheme(Theme.STANDARD);
+        extentReports = new ExtentReports();
+        extentReports.attachReporter(htmlReporter);
+    }
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("Test Suite Started: " + context.getName());
+        System.out.println("Extent Report - Test Suite started: " + context.getName());
+         extentTest = extentReports.createTest(context.getName());
     }
 
-    @Override
-    public void onTestStart(ITestResult result) {
-        System.out.println("Test Case Started: " + result.getName());
-    }
-
-    @Override
-    public void onTestSuccess(ITestResult result) {
-        System.out.println("Test Case Passed: " + result.getName());
-    }
-
-    @Override
-    public void onTestFailure(ITestResult result) {
-        System.out.println("Test Case Failed: " + result.getName());
-    }
-
-    @Override
-    public void onTestSkipped(ITestResult result) {
-        System.out.println("Test Case Skipped: " + result.getName());
-    }
     @Override
     public void onFinish(ITestContext context) {
-        extentreports.flush();
+        System.out.println("Extent Report - Test Suite finished: " + context.getName());
+        extentReports.flush();
     }
-public static ExtentReports getExtentReports() {
-	return extentreports;}
+@Override
+	public void onTestSuccess(ITestResult result) {
+		extentTest.log(Status.PASS, "Test passed");
+	}
+@Override
+	public void onTestFailure(ITestResult result) {
+		extentTest.log(Status.FAIL, "Test failed");
+	}
+@Override
+	public void onTestSkipped(ITestResult result) {
+		extentTest.log(Status.SKIP, "Test Skipped");
+	}
+
+	public static ExtentReports getExtentReports() {
+		return extentReports;
+	}
+
 }
-   
-
-
-
-
-

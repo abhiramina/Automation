@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.JavascriptAlert">
+      <class name="Test.TableDataVerifyTest">
         <methods>
-          <include name="alerttest"/>
+          <include name="setUp"/>
+          <include name="tableVerify"/>
         </methods>
-      </class> <!-- Test.JavascriptAlert -->
+      </class> <!-- Test.TableDataVerifyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
