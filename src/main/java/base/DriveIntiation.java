@@ -13,13 +13,12 @@ package base;
 	WebDriver driver;
 
 	if (browserName.equalsIgnoreCase("firefox")) {
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/main/resources/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		} 
 		else if (browserName.equalsIgnoreCase("chrome")) {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\chromedriver-win32\\chromedriver.exe");
+			 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriver.exe");	
 		driver = new ChromeDriver();
 		} 
 		else {
@@ -29,4 +28,5 @@ package base;
 
 
 }}
+	
 	
