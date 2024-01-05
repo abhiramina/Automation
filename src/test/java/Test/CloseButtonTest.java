@@ -34,10 +34,10 @@ public class CloseButtonTest extends DriveIntiation  {
 	    	progressBars=PageFactory.initElements(driver,ProgressBarsPage.class);
 	    	progressBars.startDownloadBtnClick();
 	    	WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(60));
-//	        wait.until(ExpectedConditions.elementToBeClickable(progressBars.CloseBtnClick()));
+//	        
 	    	
 	    	progressBars.CloseBtnClick();
-//	    	windowpopup.getTitles();
+//	    	
 	    	
 	    	Screenshot.takeScreenshot("WindowPopup.png",driver);
 	    }

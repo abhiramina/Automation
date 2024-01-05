@@ -30,7 +30,7 @@ public class UncheckErrorTest extends DriveIntiation {
 		driver = super.driveInitialize(browser);
 	}
 
-	@Test
+	@Test (priority=2,groups={"smoke","regression"})
 	public void form() throws Exception {
 		driver.get(INTIAL_URL);
 		homePage = PageFactory.initElements(driver, HomePage.class);
@@ -51,7 +51,7 @@ public class UncheckErrorTest extends DriveIntiation {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 //   
 		formsubmit.submit();
-		Assert.assertEquals(formsubmit.showtext2(), "You must agree before submitting");
+		Assert.assertEquals(formsubmit.showtext2(), "You must agree before submitting.");
 
 		Screenshot.takeScreenshot("errorform.png", driver);
 	}
@@ -62,7 +62,4 @@ public class UncheckErrorTest extends DriveIntiation {
 	public void closeTest() {
 		driver.quit();
 	}}
-
- 
-
 

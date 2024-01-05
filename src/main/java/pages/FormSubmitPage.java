@@ -25,7 +25,7 @@ public class FormSubmitPage {
 	WebElement showtext1;
 	@FindBy(xpath = "//input[@type='checkbox']")
 	WebElement termsandcondition;
-	@FindBy(xpath = "//input[@type='checkbox']")
+	@FindBy(xpath = "//div[@class='form-check']//div[@class='invalid-feedback']")
 	WebElement showtext2;
 	
 
