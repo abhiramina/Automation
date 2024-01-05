@@ -11,7 +11,7 @@ package util;
 		public static void takeScreenshot (String screenshotFile, WebDriver driver) throws Exception  {
 			TakesScreenshot takeScreenshot = (TakesScreenshot) driver;
 			File file = takeScreenshot.getScreenshotAs(OutputType.FILE);
-			String destinationPath = System.getProperty("user.dir") + "/test-output/Screenshotfile.png";
+			String destinationPath = System.getProperty("user.dir") + "/test-output/"+screenshotFile+".png";
 		}
 			
 		}

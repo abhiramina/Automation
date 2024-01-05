@@ -49,14 +49,14 @@ import util.Screenshot;
     	String alertText = alert.getText();
     	
     	WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(60));
-//       
-    	//javascriptalert.getTitles();
+       
+    	
     	Assert.assertEquals(alertText,"I am a Javascript alert box!");
     	alert.accept();
     	Screenshot.takeScreenshot("alertpopup.png",driver);
     }
     	
-    	//javascriptalert.OkButtonclick();
+    
    
     	@AfterTest
     	public void closeTest() {
