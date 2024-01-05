@@ -19,7 +19,8 @@ package base;
 		} 
 		else if (browserName.equalsIgnoreCase("chrome")) {
 			 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//src//main//resources//chromedriver.exe");	
-		driver = new ChromeDriver();
+		System.out.println(System.getProperty("user.dir") + "//src//main//resources//chromedriver.exe");
+			 driver = new ChromeDriver();
 		} 
 		else {
 			throw new Exception("Incorrect Browser");
