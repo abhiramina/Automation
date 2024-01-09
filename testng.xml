@@ -23,6 +23,13 @@
 		</classes>
 	</test>
 	
+	<test name="Close Button Test" parallel="classes" thread-count="2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="Test.CloseButtonTest"></class>
+		</classes>
+	</test>
+	
 	
 	<test name="Form Test" parallel="classes" thread-count="2">
 		<parameter name="browser" value="chrome"></parameter>
@@ -40,6 +47,13 @@
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
 			<class name="Test.RadioButtonTest"></class>
+		</classes>
+	</test>
+	
+	<test name="Alert Test" parallel="classes" thread-count="2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="Test.JavascriptAlert"></class>
 		</classes>
 	</test>
 
