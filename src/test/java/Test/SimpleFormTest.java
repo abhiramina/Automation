@@ -1,5 +1,7 @@
 package Test;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -25,9 +27,12 @@ public class SimpleFormTest extends DriveIntiation {
 @BeforeTest
 public void setUp() throws Exception {
 	driver=super.driveInitialize("chrome");
-	PropertyReader.getProperty("C:\\Users\\bhage\\eclipse-workspace\\framework1\\src\\test\\resources\\file.properties" ,"username","not found");
-	System.out.println(PropertyReader.getProperty("C:\\Users\\bhage\\eclipse-workspace\\framework1\\src\\test\\resources\\file.properties" ,"username","not found"));
-}
+	String currentDirectory = System.getProperty("user.dir");
+    String filePath = currentDirectory + File.separator + "src/test/resources/file.properties";
+
+    // Use the dynamically loaded file path
+    PropertyReader.getProperty(filePath, "username","not found");
+    System.out.println(PropertyReader.getProperty(filePath, "username","not found"));}
 @Test 
 public void simpleFormTest() throws Exception {
 	driver.get(INTIAL_URL);
