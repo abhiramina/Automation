@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.DriveIntiation;
@@ -22,7 +23,7 @@ public class CloseButtonTest extends DriveIntiation  {
 	    	ProgressBarsPage progressBars;
 	       
 	    	@BeforeTest
-	    	//Parameters({"browser"})
+	    	@Parameters({"browser"})
 	    	public void setUp(@Optional("chrome")String browser)throws Exception{
 	    		driver=super.driveInitialize(browser);
 	    	}
