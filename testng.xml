@@ -24,7 +24,7 @@
 	</test>
 	
 	<test name="Close Button Test" parallel="classes" thread-count="2">
-		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="browser" value="gecko"></parameter>
 		<classes>
 			<class name="Test.CloseButtonTest"></class>
 		</classes>
